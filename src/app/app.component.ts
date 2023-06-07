@@ -62,7 +62,7 @@ export class AppComponent {
         y2: {
           type: 'linear',
           position: 'right',
-          max: 1,
+          max: 100,
           min: 0
         }
       },
