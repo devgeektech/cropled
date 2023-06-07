@@ -20,37 +20,49 @@ export class AppComponent {
       datasets: [{
         label: 'A',
         yAxisID: 'y',
+
         data: [100, 96, 84, 76, 69],
-        pointHitRadius: 25
+        pointHitRadius: 25,
+        backgroundColor: 'blue'
       }, {
         label: 'B',
         yAxisID: 'y2',
-        data: [1, 1, 1, 1, 0],
-        pointHitRadius: 25
+        data: [85, 78, 71, 98, 36],
+        pointHitRadius: 25,
+        backgroundColor: 'red'
+
+      },
+    
+      {
+        label: 'C',
+        yAxisID: 'y3',
+        data: [5, 56, 86, 82, 74],
+        pointHitRadius: 25,
+        backgroundColor: 'orange'
+
       }]
     },
     options: {
       plugins: {
-        dragData: {        
+        dragData: {
           dragData: true,
-
+          dragDataRound: 10,
           round: 0,
           dragX: true,
+          dragY: true,
+
           showTooltip: true,
-          onDragStart:function (e:any, datasetIndex:any, index:any, value:any) {
-            console.log('data')
+          onDragStart: function (e: any, datasetIndex: any, index: any, value: any) {
 
           },
-          onDrag: function (e:any, datasetIndex:number, index:any, value:any) {
-            console.log('sadsadsad')
+          onDrag: function (e: any, datasetIndex: number, index: any, value: any) {
             e.target.style.cursor = 'grabbing'              //console.log("Drag Value: ", value.x)
           },
-          onDragEnd: function (e:any, datasetIndex:any, index:any, value:any) {
-            console.log('newData')
+          onDragEnd: function (e: any, datasetIndex: any, index: any, value: any) {
 
-              e.target.style.cursor = 'default'
+            e.target.style.cursor = 'default'
           },
-      },
+        },
       },
       scales: {
         y: {
@@ -62,7 +74,7 @@ export class AppComponent {
         y2: {
           type: 'linear',
           position: 'right',
-          max: 1,
+          max: 100,
           min: 0
         }
       },
@@ -76,9 +88,9 @@ export class AppComponent {
     this.createChart();
   }
 
-  
 
-  
+
+
 
   createChart() {
 
